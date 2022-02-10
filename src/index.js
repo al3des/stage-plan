@@ -1,12 +1,24 @@
-import { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import { CssBaseline } from "@mui/material"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
 
-import App from "./App";
+import { StrictMode } from "react"
+import ReactDOM from "react-dom"
 
-const rootElement = document.getElementById("root");
+import App from "./App"
+
+const theme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+})
+
+const rootElement = document.getElementById("root")
 ReactDOM.render(
   <StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+      <CssBaseline />
+    </ThemeProvider>
   </StrictMode>,
   rootElement
-);
+)
